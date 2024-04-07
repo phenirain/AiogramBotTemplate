@@ -17,6 +17,6 @@ class AnyState(StatesGroup):
 any_router = Router()
 any_router.message.filter(ChatTypeFilter(['private', 'superuser']))
 
-@any_router.message(StateFilter('*'), CommandStart)
+@any_router.message(StateFilter('*'), CommandStart())
 async def start(message: Message, state: FSMContext):
     pass
